@@ -4,3 +4,152 @@
   height: 100%;
   background-color: var(--system-main-background-color);
 }
+
+.BasicContainer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--system-content-background-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.Header,
+.CollapsedHeader {
+  width: 100%;
+  height: var(--system-header-height);
+  flex-shrink: 0;
+  z-index: var(--system-header-z-index);
+}
+
+.LayoutTab,
+.CollapsedLayoutTab {
+  width: 100%;
+  height: var(--system-layout-tab-height);
+  flex-shrink: 0;
+  z-index: var(--system-layout-z-index);
+}
+
+.Sidebar,
+.CollapsedSidebar {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: var(--system-sidebar-z-index);
+}
+
+.Sidebar {
+  width: var(--system-sidebar-width);
+}
+
+.CollapsedSidebar {
+  width: var(--system-sidebar-collapsed-width);
+}
+
+.Content,
+.CollapsedContent {
+  width: 100%;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,.5) transparent;
+}
+
+.Footer,
+.CollapsedFooter {
+  width: 100%;
+  height: var(--system-footer-height);
+  flex-shrink: 0;
+  z-index: var(--system-footer-z-index);
+}
+
+.Header,
+.Content,
+.Footer,
+.LayoutTab {
+  padding-left: var(--system-sidebar-width);
+}
+
+.CollapsedHeader,
+.CollapsedContent,
+.CollapsedFooter,
+.CollapsedLayoutTab {
+  padding-left: var(--system-sidebar-collapsed-width);
+}
+
+.HeaderInner {
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  box-shadow: var(--ring-offset-shadow), var(--ring-shadow), var(--system-header-shadow);
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+
+  .HeaderLeft,
+  .HeaderRight {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .HeaderLeft {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .HeaderRight {
+    flex-shrink: 0;
+    justify-content: flex-end;
+  }
+
+  .ToggleBtn {
+    cursor: pointer;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 14px;
+  }
+}
+
+.SidebarInner {
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  box-shadow: var(--ring-offset-shadow), var(--ring-shadow), var(--system-sidebar-shadow);
+  display: flex;
+  flex-direction: column;
+
+  .SystemName {
+    height: var(--system-header-height);
+    flex-shrink: 0;
+  }
+
+  .SidebarContent {
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+  }
+}
+
+.LayoutTabInner {
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  background-color: #FFF;
+  box-shadow: var(--ring-offset-shadow), var(--ring-shadow), var(--system-layout-tab-shadow);
+}
+
+.ContentInner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.FooterInner {
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
